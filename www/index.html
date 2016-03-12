@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>GarageApp</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/controllers.js"></script>
+    <script src="js/factories.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="GarageApp">
+    <ion-pane ng-controller="AppCtrl">
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Garage App</h1>
+      </ion-header-bar>
+      <ion-content>
+        <ion-list>
+          <ion-item class="item-toggle">
+            Immer an
+            <label class="toggle">
+              <input type="checkbox" ng-model="data.runforever" ng-click="runforever()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </ion-item>
+          <ion-item class="item-toggle">
+            Immer aus
+            <label class="toggle">
+              <input type="checkbox" ng-model="data.stopnow" ng-click="stopnow()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </ion-item>
+          <ion-item class="item-toggle">
+            Starte Timer neu
+            <label class="toggle">
+              <input type="checkbox" ng-model="data.startnewinterval" ng-click="newinterval()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </ion-item>
+
+          <ion-item class="item-input-inset">
+            <label class="item-input-wrapper">
+              <input type="number" placeholder="Zeit in Minuten" ng-model="new.time">
+            </label>
+            <button class="button button-small" ng-click="settime()">
+              Zeit festlegen
+            </button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
